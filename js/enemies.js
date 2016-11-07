@@ -13,7 +13,8 @@ var Enemy = function(x, y){
   this.dead = false; // flag for checking if the alien has been hit
   this.incrementNumberOfEnemies();
 
-  var sprite = loadImage("../test/invader1.jpg");
+
+  var sprite = loadImage("invader1.jpg");
 
   /*
     Moves the alien down by yVel and changes his direction
@@ -44,11 +45,12 @@ var Enemy = function(x, y){
     a random value.
   */
   this.shoot = function(){
+
     chanceOfShooting = Math.floor(Math.random() * 6000);
 
     if (chanceOfShooting <= firingPercent) {
-      gameObjects.push(new Bullet(this.pos.x, this.pos.y, false));
-      console.log(chanceOfShooting);
+    var bullet = new Bullet(this.pos.x + this.enemyWidth/2, this.pos.y + this.enemyWidth, false);
+
     }
   }
 
