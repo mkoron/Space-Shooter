@@ -9,6 +9,9 @@ function setup(){
 
 function draw(){
   background(0);
-  updatePositions(); //TODO
-  drawObjects(); //TODO
+  for (var i = 0; i < gameObjects.length; i++) {
+    //console.log(gameObjects[i]);
+    gameObjects[i].draw();
+    gameObjects[i].update();
+  }
 }

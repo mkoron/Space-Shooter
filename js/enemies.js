@@ -3,15 +3,17 @@ var Enemy = function(x, y){
    Given the x and y coordinates creates an alien thats
    moving left to right and viceversa.
  */
+  var firingPercent = 5;
+  var chanceOfShooting = 0; // chance factor that the alien is going to shoot
+
   this.pos = createVector(x, y) //Vector for holding position
   this.enemyWidth = 35; // the width of the alien
   this.xVel = createVector(2, 0); // horizontal velocity
   this.yVel = createVector(0, 15); // vertical velocity
-  this.chanceOfShooting = 3; // chance factor that the alien is going to shoot
   this.dead = false; // flag for checking if the alien has been hit
   this.incrementNumberOfEnemies();
 
-  var sprite = loadImage("invader1.png");
+  var sprite = loadImage("../test/invader1.jpg");
 
   /*
     Moves the alien down by yVel and changes his direction
@@ -42,10 +44,11 @@ var Enemy = function(x, y){
     a random value.
   */
   this.shoot = function(){
-    var a = Math.round(Math.random() * 1000);
-    if (a < this.chanceOfShooting) {
-      //var bullet = new Bullet(-1);
-      console.log("Shoot!");
+    chanceOfShooting = Math.floor(Math.random() * 6000);
+
+    if (chanceOfShooting <= firingPercent) {
+      gameObjects.push(new Bullet(this.pos.x, this.pos.y, false));
+      console.log(chanceOfShooting);
     }
   }
 
@@ -97,14 +100,14 @@ Enemy.prototype.checkIfEdge = function()  {
 
 //Generate Enemies with constructor, give the x and y
 function placeEnemies(){
-  
+
   var e = 35;
-  var x = e / 2; 
+  var x = e / 2;
   var numEnemies = Math.floor(width / (e * 2));
-  
+
   console.log(numEnemies);
 	for( i=0; i < numEnemies; i++){
-		
+
     gameObjects.push(new Enemy(x,e));
     x += e*2;
 	}
