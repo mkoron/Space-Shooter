@@ -15,3 +15,8 @@ function draw(){
     gameObjects[i].update();
   }
 }
+
+// for testing: mouse click on canvas stop and resume game
+
+function mousePressed(){ loop(); }
+function mouseReleased(){ noLoop(); }

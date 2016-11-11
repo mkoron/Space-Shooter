@@ -14,7 +14,7 @@ var Enemy = function(x, y){
   this.incrementNumberOfEnemies();
 
 
-  var sprite = loadImage("invader1.jpg");
+  var sprite = loadImage("images/invader.jpg");
 
   /*
     Moves the alien down by yVel and changes his direction
