@@ -55,7 +55,15 @@ var Enemy = function(x, y) {
     Generates a bullet with a force, downwards based on
     a random value.
   */
+<<<<<<< HEAD
+  this.shoot = function(){
 
+    chanceOfShooting = Math.floor(Math.random() * 6000);
+
+    if (chanceOfShooting <= firingPercent) {
+    var bullet = new Bullet(this.pos.x + this.enemyWidth/2, this.pos.y + this.enemyWidth, false);
+
+=======
     this.shoot = function() {
         if(this.pos.y > windowHeight){
           gameOver = true;
@@ -64,9 +72,9 @@ var Enemy = function(x, y) {
         if (a < this.chanceOfShooting) {
             var bullet = new Bullet(this.pos.x + this.enemyWidth / 2, this.pos.y + this.enemyWidth, false);
             gameObjects.push(bullet);
-         
+            // console.log("Shoot!");
         }
-
+>>>>>>> 8fe7e037b11bb9acfa5649689dcbe6ef2840baca
     }
 
     /*
