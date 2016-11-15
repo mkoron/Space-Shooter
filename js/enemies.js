@@ -1,22 +1,19 @@
+/**
+* @Author: Marko Koron <mark>
+* @Date:   15-11-2016
+* @Email:  marko.koron@tutanota.com
+* @Project: Sandi Moto
+* @Last modified by:   mark
+* @Last modified time: 15-11-2016
+*/
+
+
+
 var Enemy = function(x, y) {
     /*
    Given the x and y coordinates creates an alien thats
    moving left to right and viceversa.
  */
-
-  var firingPercent = 5;
-  var chanceOfShooting = 0; // chance factor that the alien is going to shoot
-
-  this.pos = createVector(x, y) //Vector for holding position
-  this.enemyWidth = 35; // the width of the alien
-  this.xVel = createVector(2, 0); // horizontal velocity
-  this.yVel = createVector(0, 15); // vertical velocity
-  this.dead = false; // flag for checking if the alien has been hit
-  this.incrementNumberOfEnemies();
-
-
-  var sprite = loadImage("images/invader.jpg");
-
     this.pos = createVector(x, y) //Vector for holding position
     this.enemyWidth = 35; // the width of the alien
     this.xVel = createVector(2, 0); // horizontal velocity
@@ -27,7 +24,6 @@ var Enemy = function(x, y) {
 
     var sprite = loadImage("images/invader.jpg");
     var deadSprite = loadImage("images/deadInvader.jpg");
-
 
   /*
     Moves the alien down by yVel and changes his direction
@@ -55,7 +51,6 @@ var Enemy = function(x, y) {
     Generates a bullet with a force, downwards based on
     a random value.
   */
-
     this.shoot = function() {
         if(this.pos.y > windowHeight){
           gameOver = true;
@@ -64,9 +59,8 @@ var Enemy = function(x, y) {
         if (a < this.chanceOfShooting) {
             var bullet = new Bullet(this.pos.x + this.enemyWidth / 2, this.pos.y + this.enemyWidth, false);
             gameObjects.push(bullet);
-
+            // console.log("Shoot!");
         }
-
     }
 
     /*
