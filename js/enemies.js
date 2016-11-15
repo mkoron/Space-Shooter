@@ -3,7 +3,7 @@ var Enemy = function(x, y) {
    Given the x and y coordinates creates an alien thats
    moving left to right and viceversa.
  */
-<<<<<<< HEAD
+
   var firingPercent = 5;
   var chanceOfShooting = 0; // chance factor that the alien is going to shoot
 
@@ -16,7 +16,7 @@ var Enemy = function(x, y) {
 
 
   var sprite = loadImage("images/invader.jpg");
-=======
+
     this.pos = createVector(x, y) //Vector for holding position
     this.enemyWidth = 35; // the width of the alien
     this.xVel = createVector(2, 0); // horizontal velocity
@@ -27,7 +27,7 @@ var Enemy = function(x, y) {
 
     var sprite = loadImage("images/invader.jpg");
     var deadSprite = loadImage("images/deadInvader.jpg");
->>>>>>> 8fe7e037b11bb9acfa5649689dcbe6ef2840baca
+
 
   /*
     Moves the alien down by yVel and changes his direction
@@ -64,7 +64,7 @@ var Enemy = function(x, y) {
         if (a < this.chanceOfShooting) {
             var bullet = new Bullet(this.pos.x + this.enemyWidth / 2, this.pos.y + this.enemyWidth, false);
             gameObjects.push(bullet);
-         
+
         }
 
     }
